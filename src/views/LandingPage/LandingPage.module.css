@@ -1,0 +1,74 @@
+.landingPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 96vh;
+    width: 100vw;
+  }
+  
+  .split {
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+  }
+
+  .left {
+    background-image: url("../../assets/img/landingPage/listarEmail.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+  }
+  
+  .right {
+    background-image: url("../../assets/img/landingPage/EmailMaker.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  
+  .content {
+    width: 50vw;
+    height: 96vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    transition: all ease .3s;
+  }
+
+  .content:hover{
+    backdrop-filter: blur(10px);
+  }
+
+  .card{
+    color: #000;
+    width: 15vw;
+    padding: 10px;
+    background-color: #ffffffd7;
+    border-radius: 10px;
+    border: 2px solid #000;
+    font: 16px;
+  }
+
+  
+  button {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: rgb(73, 127, 243);
+  }
+  

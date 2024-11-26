@@ -1,55 +1,18 @@
-import axios from 'axios';
-import React, { useRef } from 'react';
-import EmailEditor, { EditorRef } from 'react-email-editor';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LandingPage from "./views/LandingPage/LandingPage";
+import ListEmails from "./views/ListEmails/ListEmails";
+import EmailMaker from "./views/emailMaker/emailMaker";
 
-const App = () => {
-  // Referencia al editor
-  const emailEditorRef = useRef<EditorRef>(null);
-
-  // Exportar HTML generado
-  const exportHtml = () => {
-    const unlayer = emailEditorRef.current?.editor;
-
-    // Exportar el diseño como HTML
-    unlayer?.exportHtml((data) => {
-      const { design, html } = data;
-      console.log('Diseño exportado (JSON):', design);
-      console.log('HTML exportado:', html);
-
-      const url = 'https://84433d40-2337.brs.devtunnels.ms/verifyUser';
-
-      axios.post(url, html);
-
-      // Aquí podrías enviar el HTML al backend o guardarlo localmente
-      alert('HTML exportado con éxito. Revisa la consola para más detalles.');
-    });
-  };
-
+const App: React.FC = () => {
   return (
-    <div style={{ height: '100vh', width: '100vw', display: 'flex', flexDirection: 'column' }}>
-
-      <div style={{ marginBottom: '10px', textAlign: 'center' }}>
-        <button
-          onClick={exportHtml}
-          style={{
-            padding: '10px 20px',
-            fontSize: '16px',
-            backgroundColor: '#007bff',
-            color: '#fff',
-            border: 'none',
-            borderRadius: '5px',
-            cursor: 'pointer',
-          }}
-        >
-          Exportar HTML
-        </button>
-      </div>
-
-      {/* Editor de Emails */}
-      <div style={{ flex: 1, height: '96vh', width: '96vw', margin: '.5vh auto'}}>
-        <EmailEditor ref={emailEditorRef} />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/listEmails" element={<ListEmails />} />
+        <Route path="/emailMaker" element={<EmailMaker />} />
+      </Routes>
+    </Router>
   );
 };
 

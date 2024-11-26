@@ -1,0 +1,12 @@
+.container{
+    background: #fff;
+    color: black;
+    height: 60vh;
+    overflow-y: scroll;
+    margin: 2vh auto;
+    border-radius: 20px;
+}
+
+.title{
+
+}
